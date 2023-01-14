@@ -1,0 +1,15 @@
+# https://toml.io/en/v1.0.0
+
+[states]
+
+[[states.list]]
+name = "state_1"
+value = "red"
+
+[[states.list]]
+name = "state_2"
+value = "orange"
+
+[[states.list]]
+name = "state_3"
+value = "green"

@@ -1,5 +1,6 @@
 mod server;
 mod client;
+mod config;
 use log::*;
 use std::sync::mpsc;
 use std::thread;

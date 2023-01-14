@@ -68,14 +68,14 @@ fn websocket_echo() {
     let (mut socket_send, _) =
         tungstenite::connect(Url::parse("ws://localhost:9001/socket").unwrap()).expect("Can't connect");
     
-    let send_msg = Message::Text("test_message".into());
+    let send_msg = Message::Text("state_1".into());
     socket_send.write_message(send_msg.clone()).unwrap();
 
     loop {
         match rx.recv() {
             Ok(data) => {
                 println!("Receveid: {}", data);
-                assert!(data.eq(&send_msg));
+                assert!(data.eq(&Message::Text("red".into())));
                 break;
             },
             Err(e) => {
